@@ -1,7 +1,7 @@
 .cabeçalho__menu-hamburguer {
     width: 24px;
     height: 24px;
-    background-image: url(../assets/Menu.svg);
+    background-image: url("../assets/Menu.svg"); 
     background-repeat: no-repeat;
     background-position: center;
     display: inline-block;   
@@ -13,6 +13,10 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+}
+
+.lista-menu{
+    background-color: var(--azul-degrade);
 }
 
 .container {
@@ -30,13 +34,17 @@
     width: 60vw;
 }
 
-.container__botao:checked ~ .lista-menu{
-    display:block;
+.container__botao:checked ~ .lista-menu{ 
+    display:block;   
+}
+
+.container__botao:checked ~ .menu__label{
+    background: var(--azul-degrade);     
 }
 
 .lista-menu__titulo, .lista-menu__item {
     padding: 1em;
-    background-color: var(--branco);
+    background: var(--branco);
 }
 
 .lista-menu__titulo{
@@ -56,3 +64,75 @@
     display: none;
 }
 
+.container__titulo {
+    display: none;
+}
+
+.opcoes{
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .container__titulo, 
+    .container__titulo--negrito{
+        font-family: var(--fonte-secundaria);
+        font-size: 30px;
+    }
+
+    .container__titulo {
+        font-weight: 400;
+        display: block;
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    .opcoes{
+        display: flex;
+        text-transform: uppercase;
+    }
+
+    .opcoes__item{
+        padding: 0 2em;
+    }
+
+    .opcoes__link{
+        text-decoration: none;
+        color: black;
+    }
+
+    .container {
+        padding-left: 1em;
+    }
+
+    .container__imagem-transparente{
+        display: none;
+    }
+
+    .cabeçalho__menu-hamburguer {
+        display: none;
+    }
+
+    .opcoes__botao:checked ~.lista-menu {
+        display: block;
+        width: auto;
+    }
+
+    .opcoes__botao:checked ~ .opcoes__botao{
+        background-color: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__link:hover{
+        color: var(--branco);
+    }
+
+    .opcoes__botao {
+        display: none;
+    }
+
+}

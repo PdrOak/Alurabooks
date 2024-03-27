@@ -1,0 +1,11 @@
+hr {
+    margin: 0;
+}
+
+.rodapé {
+    padding: 1em;
+}
+
+.rodapé__titulo {
+    font-weight: 500;
+}
